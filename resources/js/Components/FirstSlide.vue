@@ -20,7 +20,7 @@ onMounted(()=> {
 </script>
 <template>
     <div class="w-full">
-        <div class="relative w-11/12 mx-auto mt-14">
+        <div class="relative w-11/12 mx-auto mt-0 mb-14">
             <div class="fixed inset-x-0 grid grid-cols-3 mx-auto bg-white justify-items-center py-14">
                 <Link href="#competenze" >
                     <p class="text-xl font-semibold uppercase text-gblue">Competenze</p>
@@ -31,8 +31,6 @@ onMounted(()=> {
                 <Link href="#servizi" >
                     <p class="text-xl font-semibold uppercase text-gblue">Servizi</p>
                 </Link>
-
-
             </div>
             <LogoKeySoft />
             <div class="flex w-full mt-28">

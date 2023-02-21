@@ -19,6 +19,7 @@ module.exports = {
             },
             colors: {
                 gblue: "#480094",
+                gpurple: "#343090",
             },
             fontSize: {
                 '28xl': '3.6rem'

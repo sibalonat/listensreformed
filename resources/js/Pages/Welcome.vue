@@ -43,7 +43,7 @@ watch(contattaci, (newC) => {
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Benvenuti" />
     <div class="flex w-full font-GB scroll-smooth">
         <FirstSlide v-model:contact="contattaci"  />
     </div>
@@ -58,20 +58,23 @@ watch(contattaci, (newC) => {
     </div>
     <div class="flex">
         <Modal :show="contattaci">
-            <div class="w-full">
-                <div class="grid grid-cols-3 px-4 mb-5">
-                    <p class="col-span-2 text-2xl">Contattaci</p>
-                    <XMarkIcon class="w-5 h-5 my-auto cursor-pointer justify-self-end text-gblue" @click="contattaci = false" />
+            <div class="w-full p-5 font-GB">
+                <div class="grid grid-cols-3 px-4 mt-5 mb-5">
+                    <p class="col-span-2 text-2xl text-white uppercase">Contattaci</p>
+                    <XMarkIcon class="w-8 h-8 my-auto text-white cursor-pointer justify-self-end" @click="contattaci = false" />
                 </div>
                 <div class="flex flex-col py-4">
-                    <div class="flex flex-col w-full px-4">
-                        <label for="name">Nome</label>
-                        <input type="text" class="rounded-full" v-model="nome">
+                    <div class="flex flex-col w-full px-4 mb-2">
+                        <!-- <label for="name" class="font-thin text-white uppercase">Nome</label> -->
+                        <input type="text" class="rounded-0 font-GBook" placeholder="Nome" v-model="nome">
                     </div>
-                    <div class="flex flex-col w-full px-4">
-                        <label for="name">Nome</label>
-                        <textarea class="rounded-full" v-model="nome"> </textarea>
+                    <div class="flex flex-col w-full px-4 mb-2">
+                        <!-- <label for="name">Nome</label> -->
+                        <textarea class="rounded-0 font-GBook" v-model="nome" placeholder="Messagio"> </textarea>
                     </div>
+                </div>
+                <div class="px-4 pb-5">
+                    <button class="block w-full py-2 mx-auto bg-white font-GM text-gblue">Send</button>
                 </div>
             </div>
         </Modal>

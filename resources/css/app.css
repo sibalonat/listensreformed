@@ -4,18 +4,19 @@
 
 
 @font-face {
+    /* public/fonts/GOTHAM-BOLD.woff2 */
     font-family : 'GB';
-    src         : url('./fonts/GOTHAM-BOLD.woff2') format('woff2');
+    src         : url('/public/fonts/GOTHAM-BOLD.woff2') format('woff2');
 }
 
 @font-face {
     font-family : 'GBook';
-    src         : url('./fonts/Gotham Book.woff2') format('woff2');
+    src         : url('/public/fonts/Gotham Book.woff2') format('woff2');
 }
 
 @font-face {
     font-family : 'GM';
-    src         : url('./fonts/GOTHAM-MEDIUM.woff2') format('woff2');
+    src         : url('/public/fonts/GOTHAM-MEDIUM.woff2') format('woff2');
 }
 
 html {
