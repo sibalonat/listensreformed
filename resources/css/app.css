@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family : 'GB';
+    src         : url('./fonts/GOTHAM-BOLD.woff2') format('woff2');
+}
+
+@font-face {
+    font-family : 'GBook';
+    src         : url('./fonts/Gotham Book.woff2') format('woff2');
+}
+
+@font-face {
+    font-family : 'GM';
+    src         : url('./fonts/GOTHAM-MEDIUM.woff2') format('woff2');
+}
+
+html {
+	scroll-behavior: smooth;
+}
