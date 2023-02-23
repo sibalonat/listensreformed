@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,11 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('skills', SkillsController::class)->except(['create', 'show', 'edit']);
 Route::resource('projects', ProjectController::class)->except(['create', 'show', 'edit']);
+
+Route::post('contact', [ContactController::class, 'contact'])->name('contact');
+
+Route::get('optimize', function() {
+    Artisan::call('optimize:clear');
+});
 
 require __DIR__.'/auth.php';

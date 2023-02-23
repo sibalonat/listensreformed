@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, useForm } from '@inertiajs/vue3';
 
 import { XMarkIcon } from '@heroicons/vue/24/solid'
 import FirstSlide from "@/Components/FirstSlide.vue";
@@ -16,7 +16,10 @@ import { onMounted, ref, watch } from '@vue/runtime-core';
 const contattaci = ref(false)
 
 // const contact = inject('contact', false)
-
+const form = useForm({
+    nome: '',
+    message: ''
+})
 
 
 defineProps({
@@ -28,6 +31,11 @@ defineProps({
 
 const changeContact = (e) => {
     console.log(e);
+}
+
+const sendEmail = () => {
+    // contact
+    form.post(route("contact"))
 }
 
 
@@ -43,9 +51,10 @@ watch(contattaci, (newC) => {
 </script>
 
 <template>
+
     <Head title="Benvenuti" />
     <div class="flex w-full font-GB scroll-smooth">
-        <FirstSlide v-model:contact="contattaci"  />
+        <FirstSlide v-model:contact="contattaci" />
     </div>
     <div class="flex w-full font-GB scroll-smooth">
         <SecondSlide v-model:contact="contattaci" />
@@ -61,21 +70,24 @@ watch(contattaci, (newC) => {
             <div class="w-full p-5 font-GB">
                 <div class="grid grid-cols-3 px-4 mt-5 mb-5">
                     <p class="col-span-2 text-2xl text-white uppercase">Contattaci</p>
-                    <XMarkIcon class="w-8 h-8 my-auto text-white cursor-pointer justify-self-end" @click="contattaci = false" />
+                    <XMarkIcon class="w-8 h-8 my-auto text-white cursor-pointer justify-self-end"
+                        @click="contattaci = false" />
                 </div>
-                <div class="flex flex-col py-4">
-                    <div class="flex flex-col w-full px-4 mb-2">
-                        <!-- <label for="name" class="font-thin text-white uppercase">Nome</label> -->
-                        <input type="text" class="rounded-0 font-GBook" placeholder="Nome" v-model="nome">
+                <form @submit.prevent="sendEmail">
+                    <div class="flex flex-col py-4">
+                        <div class="flex flex-col w-full px-4 mb-2">
+                            <!-- <label for="name" class="font-thin text-white uppercase">Nome</label> -->
+                            <input type="text" class="rounded-0 font-GBook" placeholder="Nome" v-model="form.nome">
+                        </div>
+                        <div class="flex flex-col w-full px-4 mb-2">
+                            <!-- <label for="name">Nome</label> -->
+                            <textarea class="rounded-0 font-GBook" v-model="form.message" placeholder="Messagio"> </textarea>
+                        </div>
                     </div>
-                    <div class="flex flex-col w-full px-4 mb-2">
-                        <!-- <label for="name">Nome</label> -->
-                        <textarea class="rounded-0 font-GBook" v-model="nome" placeholder="Messagio"> </textarea>
+                    <div class="px-4 pb-5">
+                        <button type="submit" class="block w-full py-2 mx-auto bg-white font-GM text-gblue">Send</button>
                     </div>
-                </div>
-                <div class="px-4 pb-5">
-                    <button class="block w-full py-2 mx-auto bg-white font-GM text-gblue">Send</button>
-                </div>
+                </form>
             </div>
         </Modal>
     </div>

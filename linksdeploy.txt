@@ -1,0 +1,19 @@
+lidhjaalfa
+
+me e mira
+https://www.youtube.com/watch?v=0YrpjTRSfN8
+
+https://mediastroke.com/blog/host-laravel-project/
+https://stackoverflow.com/questions/61310416/how-do-i-upload-a-laravel-project-on-cpanel-shared-hosting
+https://laracasts.com/discuss/channels/laravel/how-do-i-host-laravel-and-inertiajs-app-in-cpanel
+
+https://stackoverflow.com/questions/73146336/vite-manifest-resources-css-app-css-on-cpanel-server
+
+https://laravel.com/docs/10.x/vite
+
+https://laracasts.com/discuss/channels/laravel/laravel-9-vite-manifest-not-found-at-publicbuildmanifestjson
+
+https://github.com/vitejs/vite-plugin-basic-ssl
+
+https://laracasts.com/discuss/channels/vite/laravel-vite-deploying-to-host
+
