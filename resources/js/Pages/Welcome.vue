@@ -46,11 +46,17 @@ watch(contattaci, (newC) => {
     console.log(newC);
 })
 
-watch(nameComponent, (newC) => {
-    console.log(newC);
+// watch(nameComponent, (newC) => {
+//     console.log(newC);
+// })
+
+watch(home, (shpia) => {
+    if (shpia === 'clicked') {
+        nameComponent.value = 'home'
+    }
 })
 
-provide('hm', home.value)
+provide('hm', home)
 
 </script>
 
