@@ -18,15 +18,18 @@ module.exports = {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                gblue: "#480094",
+                gblue: "#2E3192",
                 gpurple: "#343090",
             },
             fontSize: {
-                '28xl': '3.6rem'
+                "28xl": "3.6rem",
             },
             width: {
-                '68': '68%'
-            }
+                68: "68%",
+            },
+            zIndex: {
+                100: "1000",
+            },
 
             // #48009400
         },

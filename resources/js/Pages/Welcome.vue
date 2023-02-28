@@ -7,15 +7,14 @@ import SecondSlide from "@/Components/SecondSlide.vue";
 import TerzoSlide from "@/Components/TerzoSlide.vue";
 import QuartoSlide from "@/Components/QuartoSlide.vue";
 import Modal from '@/Components/Modal.vue';
-// Modal
-import { onMounted, ref, watch } from '@vue/runtime-core';
+import MenuComponent from '@/Components/SliderForMenu.vue';
 
-// import { inject } from 'vue'
-// FirstSlide
+import { onMounted, provide, ref, watch } from '@vue/runtime-core';
 
 const contattaci = ref(false)
+const nameComponent = ref('home')
+const home = ref('')
 
-// const contact = inject('contact', false)
 const form = useForm({
     nome: '',
     message: ''
@@ -34,36 +33,40 @@ const changeContact = (e) => {
 }
 
 const sendEmail = () => {
-    // contact
     form.post(route("contact"))
 }
 
 
 // contattaci
 onMounted(() => {
-    // console.log(contact);
     FirstSlide, TerzoSlide, SecondSlide, QuartoSlide, Modal, XMarkIcon
 })
 
 watch(contattaci, (newC) => {
     console.log(newC);
 })
+
+watch(nameComponent, (newC) => {
+    console.log(newC);
+})
+
+provide('hm', home.value)
+
 </script>
 
 <template>
 
     <Head title="Benvenuti" />
+
+    <MenuComponent v-model:nameComponent="nameComponent" />
+
     <div class="flex w-full font-GB scroll-smooth">
-        <FirstSlide v-model:contact="contattaci" />
-    </div>
-    <div class="flex w-full font-GB scroll-smooth">
-        <SecondSlide v-model:contact="contattaci" />
-    </div>
-    <div class="flex w-full font-GB scroll-smooth">
-        <TerzoSlide v-model:contact="contattaci" />
-    </div>
-    <div class="flex w-full font-GB scroll-smooth">
-        <QuartoSlide />
+        <component :is="nameComponent === 'home' ?
+        FirstSlide : nameComponent !== 'home' && nameComponent === 'competenze' ?
+        SecondSlide : nameComponent !== 'home' && nameComponent === 'mission' ?
+        TerzoSlide : nameComponent !== 'home' && nameComponent === 'servizi' ?
+        QuartoSlide : FirstSlide"
+        v-model:contact="contattaci" />
     </div>
     <div class="flex">
         <Modal :show="contattaci">
@@ -76,11 +79,9 @@ watch(contattaci, (newC) => {
                 <form @submit.prevent="sendEmail">
                     <div class="flex flex-col py-4">
                         <div class="flex flex-col w-full px-4 mb-2">
-                            <!-- <label for="name" class="font-thin text-white uppercase">Nome</label> -->
                             <input type="text" class="rounded-0 font-GBook" placeholder="Nome" v-model="form.nome">
                         </div>
                         <div class="flex flex-col w-full px-4 mb-2">
-                            <!-- <label for="name">Nome</label> -->
                             <textarea class="rounded-0 font-GBook" v-model="form.message" placeholder="Messagio"> </textarea>
                         </div>
                     </div>
