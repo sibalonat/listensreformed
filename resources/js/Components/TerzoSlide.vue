@@ -16,8 +16,7 @@ const contact = () => {
 </script>
 
 <template>
-
-<div class="w-full">
+    <div class="w-full">
         <div class="w-1/2 mx-auto mt-20">
             <LogoKeySoftPicola />
         </div>
@@ -30,13 +29,19 @@ const contact = () => {
             <div class="w-11/12 mx-auto lg:w-1/2">
                 <div class="grid grid-cols-3 gap-x-3 gap-y-4">
                     <div class="flex flex-col w-full">
-                        <img :src="'./brands/Laravel Logo.svg'" class="w-full" alt="">
+                        <a href="https://laravel.com/">
+                            <img :src="'./brands/Laravel Logo.svg'" class="w-full" alt="">
+                        </a>
                     </div>
                     <div class="flex flex-col w-full">
-                        <img :src="'./brands/Livewire.svg'" class="w-full" alt="">
+                        <a href="https://laravel-livewire.com/">
+                            <img :src="'./brands/Livewire.svg'" class="w-full" alt="">
+                        </a>
                     </div>
                     <div class="flex flex-col w-full">
-                        <img :src="'./brands/Vue.svg'" class="w-68" alt="">
+                        <a href="https://vuejs.org/">
+                            <img :src="'./brands/Vue.svg'" class="w-68" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -50,5 +55,4 @@ const contact = () => {
             </button>
         </div>
     </div>
-
 </template>
