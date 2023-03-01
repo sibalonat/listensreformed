@@ -14,6 +14,7 @@ import { onMounted, provide, ref, watch } from '@vue/runtime-core';
 const contattaci = ref(false)
 const nameComponent = ref('home')
 const home = ref('')
+const i = ref('')
 
 const form = useForm({
     nome: '',
@@ -51,12 +52,15 @@ watch(contattaci, (newC) => {
 // })
 
 watch(home, (shpia) => {
+    console.log(shpia);
     if (shpia === 'clicked') {
         nameComponent.value = 'home'
     }
 })
 
 provide('hm', home)
+
+provide('i', contattaci)
 
 </script>
 
@@ -69,13 +73,13 @@ provide('hm', home)
     <div class="flex w-full font-GB scroll-smooth">
         <component :is="nameComponent === 'home' ?
         FirstSlide : nameComponent !== 'home' && nameComponent === 'competenze' ?
-        SecondSlide : nameComponent !== 'home' && nameComponent === 'mission' ?
-        TerzoSlide : nameComponent !== 'home' && nameComponent === 'servizi' ?
+        TerzoSlide : nameComponent !== 'home' && nameComponent === 'mission' ?
+        SecondSlide : nameComponent !== 'home' && nameComponent === 'servizi' ?
         QuartoSlide : FirstSlide"
         v-model:contact="contattaci" />
     </div>
-    <div class="flex">
-        <Modal :show="contattaci">
+    <div class="flex z-100">
+        <Modal :show="contattaci" >
             <div class="w-full p-5 font-GB">
                 <div class="grid grid-cols-3 px-4 mt-5 mb-5">
                     <p class="col-span-2 text-2xl text-white uppercase">Contattaci</p>

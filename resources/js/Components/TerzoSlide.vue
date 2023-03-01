@@ -18,7 +18,7 @@ const contact = () => {
 <template>
 
 <div class="w-full">
-        <div class="w-1/2 mx-auto mt-20" id="competenze">
+        <div class="w-1/2 mx-auto mt-20">
             <LogoKeySoftPicola />
         </div>
         <div class="flex w-full mt-20">

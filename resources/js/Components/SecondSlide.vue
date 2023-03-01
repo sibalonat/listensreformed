@@ -6,6 +6,7 @@ import { onMounted, ref } from "@vue/runtime-core";
 const prop = defineProps({
     contact: Boolean,
 })
+
 const emit = defineEmits(['update:contattaci']);
 const contattaci = ref(false)
 const contact = () => {
@@ -18,9 +19,6 @@ onMounted(() => {
     console.log(contattaci);
 })
 
-// watch(contattaci, (newC) => {
-//     console.log(newC);
-// })
 </script>
 <template>
     <div class="w-full font-GB scroll-smooth">
