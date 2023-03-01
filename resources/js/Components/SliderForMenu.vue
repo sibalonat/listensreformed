@@ -26,6 +26,7 @@ const slide = computed({
 })
 
 const index = inject('i');
+// const dt = inject('hm');
 
 
 const emit = defineEmits(['update:name-component']);
@@ -37,6 +38,10 @@ watch(slide.value, (toPass) => {
     emit('update:name-component', toPass)
 })
 
+// watch(dt.value, (newdt) => {
+//     console.log(newdt);
+// })
+
 </script>
 <template>
     <div class="fixed w-full bg-white z-100" :class="index === false ? 'flex' : 'hidden'">
@@ -47,15 +52,15 @@ watch(slide.value, (toPass) => {
                         leave-active-class="animate__animated animate__fadeOut">
                         <div class="grid w-full grid-cols-3 pt-10 pb-5 pl-1 pr-5 mx-auto mb-1 bg-white lg:pt-10 lg:pb-10 lg:mb-3 lg:px-8 justify-items-end"
                             v-if="isOpen.value">
-                            <button type="button" class="w-6/12" @click="slide = 'mission'">
-                                <p class="w-full text-sm font-semibold uppercase lg:text-xl text-gblue">Mission</p>
+                            <button type="button" class="w-9/12" @click="slide = 'mission'">
+                                <p class="w-full text-sm font-semibold text-center uppercase lg:text-xl text-gblue">Mission</p>
                             </button>
                             <button type="button" class="w-9/12" @click="slide = 'competenze'">
-                                <p class="w-full text-sm font-semibold text-right uppercase lg:text-xl text-gblue">
+                                <p class="w-full text-sm font-semibold text-center uppercase lg:text-xl text-gblue">
                                     Competenze</p>
                             </button>
-                            <button type="button" class="w-6/12" @click="slide = 'servizi'">
-                                <p class="w-full text-sm font-semibold uppercase lg:text-xl text-gblue">Servizi</p>
+                            <button type="button" class="w-9/12" @click="slide = 'servizi'">
+                                <p class="w-full text-sm font-semibold text-center uppercase lg:text-xl text-gblue">Servizi</p>
                             </button>
                         </div>
                     </Transition>

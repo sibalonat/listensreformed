@@ -13,7 +13,6 @@ import { onMounted, provide, ref, watch } from '@vue/runtime-core';
 
 const contattaci = ref(false)
 const nameComponent = ref('home')
-const home = ref('')
 const i = ref('')
 
 const form = useForm({
@@ -40,25 +39,24 @@ const sendEmail = () => {
 
 // contattaci
 onMounted(() => {
-    FirstSlide, TerzoSlide, SecondSlide, QuartoSlide, Modal, XMarkIcon
+    FirstSlide, TerzoSlide, SecondSlide, QuartoSlide, Modal, XMarkIcon, i
+
+    // methods
+    changeContact, sendEmail
 })
 
 watch(contattaci, (newC) => {
     console.log(newC);
 })
 
-// watch(nameComponent, (newC) => {
-//     console.log(newC);
-// })
 
-watch(home, (shpia) => {
-    console.log(shpia);
+watch(nameComponent, (shpia) => {
     if (shpia === 'clicked') {
         nameComponent.value = 'home'
     }
 })
 
-provide('hm', home)
+provide('hm', nameComponent)
 
 provide('i', contattaci)
 

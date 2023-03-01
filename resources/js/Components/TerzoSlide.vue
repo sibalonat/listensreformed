@@ -22,12 +22,12 @@ const contact = () => {
             <LogoKeySoftPicola />
         </div>
         <div class="flex w-full mt-20">
-            <p class="w-5/6 mx-auto text-3xl font-bold text-center uppercase text-gblue">
+            <p class="w-5/6 mx-auto text-2xl font-bold text-center uppercase text-gblue">
                 COME PROGRAMMIAMO PER IL WEB
             </p>
         </div>
         <div class="flex w-full mt-20">
-            <div class="w-1/2 mx-auto">
+            <div class="w-11/12 mx-auto lg:w-1/2">
                 <div class="grid grid-cols-3 gap-x-3 gap-y-4">
                     <div class="flex flex-col w-full">
                         <img :src="'./brands/Laravel Logo.svg'" class="w-full" alt="">
@@ -42,9 +42,12 @@ const contact = () => {
             </div>
 
         </div>
-        <div class="flex w-full my-24">
-            <button class="w-1/6 px-2 py-1 mx-auto text-xl font-semibold text-white uppercase cursor-pointer bg-gblue"
-            @click="contact"> contattaci</button>
+        <div class="flex w-full mt-20">
+            <button
+                class="w-5/6 px-2 py-1 mx-auto text-lg font-semibold text-white uppercase cursor-pointer lg:w-1/6 bg-gblue"
+                @click="contact">
+                contattaci
+            </button>
         </div>
     </div>
 

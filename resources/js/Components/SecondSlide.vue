@@ -16,7 +16,7 @@ const contact = () => {
 // provide('contact', contattaci)
 
 onMounted(() => {
-    console.log(contattaci);
+    // console.log(contattaci);
 })
 
 </script>
@@ -26,25 +26,25 @@ onMounted(() => {
             <LogoKeySoft />
         </div>
         <div class="flex w-full mt-16">
-            <p class="w-5/6 mx-auto font-black text-center uppercase text-28xl text-gblue">Mission</p>
+            <p class="w-5/6 mx-auto text-5xl font-black text-center uppercase lg:text-28xl text-gblue">Mission</p>
         </div>
         <div class="flex w-full mt-0">
-            <p class="w-5/6 mx-auto text-2xl font-black text-center text-gblue">
+            <p class="w-5/6 mx-auto text-xl font-black text-center text-gblue">
                 Permettervi di digitalizzare in modo semplice e a costi competitivi.
             </p>
         </div>
         <div class="flex w-full mt-12">
-            <p class="w-5/6 mx-auto text-3xl font-bold text-center uppercase text-gblue">
+            <p class="w-5/6 mx-auto text-2xl font-bold text-center uppercase text-gblue">
                 LE NOSTRE ARMI VINCENTI
             </p>
         </div>
         <div class="flex w-full mt-9">
             <div class="w-5/6 mx-auto">
-                <p class="w-full mx-auto text-2xl font-black text-center uppercase text-gblue">
+                <p class="w-full mx-auto text-xl font-black text-center uppercase text-gblue">
                     SEMPLICITÀ
                 </p>
                 <div class="w-full mt-3">
-                    <p class="w-3/6 mx-auto text-base font-normal text-center text-gblue">
+                    <p class="w-full mx-auto text-base font-normal text-center lg:w-3/6 text-gblue">
                         Siamo uno «one stop shop» per semplificare notevolmente sviluppi software con un unico
                         interlocutore.
                     </p>
@@ -53,11 +53,11 @@ onMounted(() => {
         </div>
         <div class="flex w-full mt-9">
             <div class="w-5/6 mx-auto">
-                <p class="w-full mx-auto text-2xl font-black text-center uppercase text-gblue">
+                <p class="w-full mx-auto text-xl font-black text-center uppercase text-gblue">
                     VELOCITÀ
                 </p>
                 <div class="w-full mt-3">
-                    <p class="w-3/6 mx-auto text-base font-normal text-center text-gblue">
+                    <p class="w-full mx-auto text-base font-normal text-center lg:w-3/6 text-gblue">
                         Abbiamo uno staff di oltre cento persone tra programmatori e project manager per garantirvi consegne
                         rapide.
                     </p>
@@ -66,13 +66,15 @@ onMounted(() => {
         </div>
         <div class="flex w-full mt-9">
             <div class="w-5/6 mx-auto">
-                <p class="w-full mx-auto text-2xl font-black text-center uppercase text-gblue">
+                <p class="w-full mx-auto text-xl font-black text-center uppercase text-gblue">
                     COMPETITIVITÀ
                 </p>
                 <div class="w-full mt-3">
-                    <p class="w-5/6 mx-auto text-base font-normal text-center text-gblue">
+                    <p class="w-full mx-auto text-base font-normal text-center text-gblue">
                         La nostra presenza internazionale ci garantisce il reperimento di talento a costi competitivi e ci
-                        permette di offrire prezzi fino al 40% inferiori al mercato Italiano. La qualità del nostro lavoro
+                        permette di offrire prezzi fino al 40% inferiori al mercato Italiano.
+                        <br>
+                        La qualità del nostro lavoro
                         di programmazione è comprovata: Keysoft vanta infatti come clienti varie multinazionali leader di
                         mercato nel settore dell'energia, software, automotive, aeronautica.
                     </p>
@@ -80,10 +82,14 @@ onMounted(() => {
             </div>
         </div>
         <div class="flex w-full mt-20">
-            <button class="w-1/6 px-2 py-1 mx-auto text-xl font-semibold text-white uppercase cursor-pointer bg-gblue"
-                @click="contact"> contattaci</button>
+            <button
+                class="w-5/6 px-2 py-1 mx-auto text-lg font-semibold text-white uppercase cursor-pointer lg:w-1/6 bg-gblue"
+                @click="contact">
+                contattaci
+            </button>
         </div>
         <div class="flex w-full mb-20">
 
+        </div>
     </div>
-</div></template>
+</template>
